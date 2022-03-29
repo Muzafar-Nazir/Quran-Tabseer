@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_tabseer/views/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,11 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Quran and Tafseer',
+      home: HomeScreen(),
     );
   }
 }
