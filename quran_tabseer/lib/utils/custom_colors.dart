@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 
 class CustomColors {
   static const Color primeryDarkcolor = Color(0xff0097A7);
+  static const Color defaultcolor = Color(0xff2196F3);
   static const Color primeryLightcolor = Color(0xffB2EBF2);
   static const Color primeryColor = Color(0xff00BCD4);
   static const Color buttoncolor = Color(0xff607D8B);

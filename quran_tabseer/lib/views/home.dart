@@ -1,10 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:quran_tabseer/utils/custom_colors.dart';
+
 import 'package:quran_tabseer/utils/custom_textstyle.dart';
+import 'package:quran_tabseer/views/surah.dart';
+
+import '../widgets.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int _currentIndex = 1;
+  final tabs = [
+    Center(
+      child: Text('Parah'),
+    ),
+    Center(
+      child: SurahScreen(),
+    ),
+    Center(
+      child: Text('Bookmarks'),
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +35,18 @@ class HomeScreen extends StatefulWidget {
           'Quran and Tafseer',
           style: StylesText.HeadingStyle,
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                showSearch(
+                  context: context,
+                  delegate: CustomSearchDelegate(),
+                );
+              },
+              icon: Icon(Icons.search))
+        ],
       ),
+      body: tabs[_currentIndex],
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.
@@ -74,7 +106,14 @@ class HomeScreen extends StatefulWidget {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0, // this will be set when a new tab is tapped
+        type: BottomNavigationBarType.fixed,
+        backgroundColor: CustomColors.defaultcolor,
+        selectedFontSize: 13,
+        selectedItemColor: CustomColors.text_color,
+        selectedLabelStyle: StylesText.Heading2Style,
+
+        currentIndex:
+            _currentIndex, // this will be set when a new tab is tapped
         items: [
           BottomNavigationBarItem(
             label: 'Parah',
@@ -89,13 +128,18 @@ class HomeScreen extends StatefulWidget {
             icon: Icon(Icons.bookmark_add),
           )
         ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
     );
   }
 
-  @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
-  }
+  // @override
+  // State<StatefulWidget> createState() {
+  //   // TODO: implement createState
+  //   throw UnimplementedError();
+  // }
 }
