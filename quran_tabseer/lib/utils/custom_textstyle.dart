@@ -6,6 +6,10 @@ class StylesText {
       color: CustomColors.text_color,
       fontWeight: FontWeight.bold,
       fontSize: 18);
+  static const ListHeadingStyle = TextStyle(
+      color: CustomColors.primarytext_color,
+      fontWeight: FontWeight.bold,
+      fontSize: 18);
   static const Heading2Style = TextStyle(
       color: CustomColors.text_color,
       fontWeight: FontWeight.bold,
