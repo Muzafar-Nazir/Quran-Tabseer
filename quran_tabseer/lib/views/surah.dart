@@ -35,9 +35,14 @@ class _SurahScreenState extends State<SurahScreen> {
                         children: [
                           Text(snapshot.data![index].link.toString()),
                           // Text(snapshot.data![index].totalVerses.toString()),
-                          Text(snapshot.data![index].translation.toString()),
                           Text(
-                              snapshot.data![index].transliteration.toString()),
+                            snapshot.data![index].translation.toString(),
+                            style: StylesText.Heading2StyleBlack,
+                          ),
+                          Text(
+                            snapshot.data![index].transliteration.toString(),
+                            style: StylesText.Heading3StyleBlack,
+                          ),
                         ],
                       ),
                     ),

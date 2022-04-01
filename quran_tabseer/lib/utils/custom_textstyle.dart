@@ -14,4 +14,12 @@ class StylesText {
       color: CustomColors.text_color,
       fontWeight: FontWeight.bold,
       fontSize: 13);
+  static const Heading2StyleBlack = TextStyle(
+      color: CustomColors.primarytext_color,
+      fontWeight: FontWeight.bold,
+      fontSize: 13);
+  static const Heading3StyleBlack = TextStyle(
+      color: CustomColors.primarytext_color,
+      fontWeight: FontWeight.bold,
+      fontSize: 11);
 }
